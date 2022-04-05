@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script src="./scripts.js"></script>
+
+
+<header id="cabecalhoMenu">
+    <center><h1>APLICAÇÕES TESTE</h1></center>
+    <nav>
+        <h3><a href="#calculador"><center>CALCULADORA</center>  </a></h3>
+        <h3><a href="#imc"><center>IMC</center> </a></h3>
+        <h3><a href="#conversor"><center>Conversor real/dolar</center></a></h3>
+        <h3><a href="#controleGasto"><center>Controle de Gastos</center></a></h3>
+    </nav>
+</header>
+
+<aside id="menuLateral">
+    <ul>
+        <li><a href="#cabecalhoMenu">MENU</a></li><br>
+        <li><a href="#calculadora">CALCULADORA</a></li><br>
+        <li><a href="#imc"> IMC </a></li><br>
+        <li><a href="#conversor">CONVERSOR</a></li><br>
+        <li><a href="#controleGasto">RENDA</a></li><br>
+    </ul>
+</aside>
+
+<main>
+
+    
+
+    <div class="calculadora" id="calculadora">
+        <h2>Calculadora</h2>
+        <p id="resultado"></p>
+        <table>
+            <tr>
+                <td><button class="botao" onclick="clean()">C</button></td>
+                <td><button class="botao" onclick="back()">DLT</button></td>
+                <td><button class="botao" onclick="insert('/')">/</button></td>
+                <td><button class="botao" onclick="insert('*')">X</button></td>
+            </tr>
+            <tr>
+                <td><button class="botao" onclick="insert('7')">7</button></td>
+                <td><button class="botao" onclick="insert('8')">8</button></td>
+                <td><button class="botao" onclick="insert('9')">9</button></td>
+                <td><button class="botao" onclick="insert('-')">-</button></td>
+            </tr>
+            <tr>
+                <td><button class="botao" onclick="insert('4')">4</button></td>
+                <td><button class="botao" onclick="insert('5')">5</button></td>
+                <td><button class="botao" onclick="insert('6')">6</button></td>
+                <td><button class="botao" onclick="insert('+')">+</button></td>
+            </tr>
+            <tr>
+                <td><button class="botao" onclick="insert('1')">1</button></td>
+                <td><button class="botao" onclick="insert('2')">2</button></td>
+                <td><button class="botao" onclick="insert('3')">3</button></td>
+                <td rowspan="2"><button class="botao" style="height: 106px;" onclick="calcular()">=</button></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button class="botao" style="width: 106px;" onclick="insert('0')">0</button></td>
+                <td><button class="botao" onclick="insert('.')">.</button></td>
+            </tr>
+        </table>
+    </div>
+    
+    <div id="imc">
+
+        <h1>IMC Ideal</h1>
+
+        <label for="peso">Digite o peso:</label>
+        <input type="number" name="inputPeso" id="peso">
+
+        <label for="altura">Digite a altura:</label>
+        <input type="number" name="inputAltura" id="altura"><br>
+
+        <input type="button" value="CALCULAR" id="calcular" name="botaoCalcular" onclick="calcularImc()">
+
+        <p id="imc" style="background-color: white;" >Resultado: </p>
+
+    </div>
+
+    <div id="conversor">
+        <h1>Converter reais para dolares</h1>
+
+        <label for="real">Valor em reais:</label>
+        <input type="number" name="inputReal" id="real" value=0>
+        <label for="dol">Valor em dol:</label>
+        <input type="number" name="inputDol" id="dol" value=0><br>
+
+        <input type="button" value="CALCULAR" id="calcular" name="botaoCalcular" onclick="calcularConversao()">
+    </div>
+
+    <div id="controleGasto"">
+        <h1>Controle de Gastos</h1>
+        
+        <label for="receita">Insira a receita total da família</label>
+        <input type="number" name="inputReceita" id="receita" value=0><br><br>
+
+        <label for="gasto">Insira o valor do gasto: </label>
+        <input type="number" name="inputGasto" id="gasto" value=0><br><br>
+
+        <input type="button" value="CALCULAR" onclick="calcularGasto()"><br><br>
+
+        <label for="total">Total:</label>
+        <input type="number" name="inputTotal" id="total">
+        
+    </div>
+
+</main>
+
+<footer>Site experimental por Marcos Vinícius Pereira</footer>
+    
+</body>
+</html>
