@@ -1,23 +1,36 @@
 function calcularImc(){
-    
     let pesoVar = document.getElementById('peso').value; 
     let alturaVar =  document.getElementById('altura').value;
-    let resultadoVar = parseInt(pesoVar) + parseInt(alturaVar);
-    document.getElementById('imc').innerHTML = resultadoVar;
+    let resultadoVar = parseFloat(pesoVar) / (parseFloat(alturaVar) * parseFloat(alturaVar)) ; 
+    //document.getElementById('resultadoImc').innerHTML = resultadoVar.toFixed(1);
 
-    
-}
+    if (resultadoVar.toFixed(1)<18.5){
+        document.getElementById('resultadoImc').innerHTML = resultadoVar.toFixed(1) + ": Abaixo do peso";}
+    else if (resultadoVar.toFixed(1)<24.9){
+        document.getElementById('resultadoImc').innerHTML = resultadoVar.toFixed(1) + ": Peso normal ou adequado";}
+    else if (resultadoVar.toFixed(1)<29.9){
+       document.getElementById('resultadoImc').innerHTML = resultadoVar.toFixed(1) + ": Sobrepeso";}
+    else if (resultadoVar.toFixed(1)<34.9){
+        document.getElementById('resultadoImc').innerHTML = resultadoVar.toFixed(1) + ": Obesidade Grau I";}
+    else if (resultadoVar.toFixed(1)<39.9){
+        document.getElementById('resultadoImc').innerHTML = resultadoVar.toFixed(1) + ": Obesidade Grau II";}
+    else if (resultadoVar.toFixed(1)>40){
+        document.getElementById('resultadoImc').innerHTML = resultadoVar.toFixed(1) + ": Obesidade Grau III ou Mórbida";}
+
+    document.getElementById('peso').value = 0;
+    document.getElementById('altura').value = 0;
+
+} 
+
+
 
 function calcularConversao(){
     let real = document.getElementById('real').value;
     let dol = document.getElementById('dol').value;
 
-    if( real == 0){
-        document.getElementById('real').value = dol*5;
-    } else if (dol == 0){
-        document.getElementById('dol').value = real/5;
-    }
-
+    document.getElementById('real').value = dol*5;
+    document.getElementById('dol').value = real/5;
+    
 }
 
 function calcularGasto(){
@@ -61,4 +74,4 @@ function calcular()
     {
         document.getElementById('resultado').innerHTML = "Nada..."
     }
-} 
+}
